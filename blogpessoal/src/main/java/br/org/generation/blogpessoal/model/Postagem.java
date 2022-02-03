@@ -25,11 +25,11 @@ public class Postagem {
 	private Long id;
 	
 	@NotBlank ( message = "Esse campo é obrigatório e não pode ter espaços em branco!")
-	@Size (min = 5, max = 20, message = "O campo deve ter no mínimo 5 e no máximo 20 caractéres.")
+	@Size (max = 20, message = "O campo deve ter no máximo 20 caractéres.")
 	public String titulo;
 	
 	@NotNull (message = "Para realizar a postagem, esse campo não pode estar em branco!")
-	@Size (min = 5, max = 1000, message = "O campo deve ter no mínimo 5 e no máximo 1000 caractéres")
+	@Size (max = 1000, message = "O campo deve ter no máximo 1000 caractéres")
 	public String texto;
 	
 	@UpdateTimestamp
@@ -38,6 +38,10 @@ public class Postagem {
 	@ManyToOne
 	@JsonIgnoreProperties("postagem")
 	private Tema tema;
+	
+	@ManyToOne
+	@JsonIgnoreProperties("postagem")
+	private Usuario usuario;
 
 	public Long getId() {
 		return id;
@@ -78,7 +82,13 @@ public class Postagem {
 	public void setTema(Tema tema) {
 		this.tema = tema;
 	}
-	
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
 
 	
 }

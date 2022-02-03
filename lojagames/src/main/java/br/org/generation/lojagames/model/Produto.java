@@ -37,7 +37,7 @@ public class Produto {
 	private int quantidade;
 	
 	@Column(name = "data_lancamento")
-	@JsonFormat(pattern = "yyy-MM-dd")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private LocalDate dataLancamento;
 	
 	@JsonFormat (shape = JsonFormat.Shape.STRING)
