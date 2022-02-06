@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.org.generation.lojagames.model.Produto;
 import br.org.generation.lojagames.repository.CategoriaRepository;
-import br.org.generation.lojagames.respository.ProdutoRepository;
+import br.org.generation.lojagames.repository.ProdutoRepository;
 
 @RestController
 @RequestMapping("/produtos")
