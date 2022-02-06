@@ -27,7 +27,7 @@ public class UsuarioService {
 		if (usuarioRepository.findByUsuario(usuario.getUsuario()).isPresent())
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "O usuário já existe!", null);
 		
-		if (calcularIdade(usuario.getDataNasc()) < 18)
+		if (calcularIdade(usuario.getDataNas()) < 18)
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"O usuário é menor de 18 anos!", null);
 		
 		usuario.setSenha(criptografarSenha(usuario.getSenha()));
