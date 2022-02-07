@@ -34,7 +34,7 @@ public class Usuario {
 	
 	@NotBlank (message = "O campo 'senha' é obrigatório!")
 	@Size (min = 8, message = "O campo 'senha' deve ter no mínimo 8 caractéres!")
-	private int senha;
+	private String senha;
 	
 	private String foto;
 	
@@ -42,6 +42,15 @@ public class Usuario {
 	@JsonFormat(pattern = "yyy-MM-dd")
 	@NotNull (message = "O campo 'data de nascimento' é obrigatório!")
 	private LocalDate dataNascimento;
+	
+	public Usuario(Long id, String nome, String usuario, String senha, String foto, LocalDate dataNasc) {
+        this.id= id;
+        this.nome=nome;
+        this.usuario=usuario;
+        this.senha=senha;
+        this.foto=foto;
+        this.dataNascimento=dataNasc;
+    }
 
 	public Long getId() {
 		return id;
@@ -67,11 +76,11 @@ public class Usuario {
 		this.usuario = usuario;
 	}
 
-	public int getSenha() {
+	public String getSenha() {
 		return senha;
 	}
 
-	public void setSenha(int senha) {
+	public void setSenha(String senha) {
 		this.senha = senha;
 	}
 
@@ -90,7 +99,8 @@ public class Usuario {
 	public void setDataNascimento(LocalDate dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
-	
+
+
 	
 	
 	
